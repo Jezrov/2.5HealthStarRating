@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_PlayerHealthBar",
+  "name": "obj_BuyablePotion1",
   "spriteId": {
-    "name": "spr_PlayerHealthBar",
-    "path": "sprites/spr_PlayerHealthBar/spr_PlayerHealthBar.yy",
+    "name": "spr_BuyablePotion1",
+    "path": "sprites/spr_BuyablePotion1/spr_BuyablePotion1.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,11 +26,14 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"ButtonPress","varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
+  ],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "Shop",
+    "path": "folders/Objects/Shop.yy",
   },
 }
