@@ -1,5 +1,53 @@
 
+// DEBUG TESTING CONTROLS
+if keyboard_check(vk_up)
+	Health++;	
+if keyboard_check(vk_down)
+	Health--;	
+if keyboard_check(vk_right)
+	MaxHealth++;	
+if keyboard_check(vk_left)
+	MaxHealth--;	
 
+
+
+// clamp Health, Death
+if (MaxHealth <= 0) MaxHealth = 0;
+if (Health >= MaxHealth) Health = MaxHealth;
+if (Health <= 0)
+{
+	Health = 0;
+	instance_destroy(self);
+}
+
+
+
+// Use Health Potion
+if (keyboard_check_pressed(ord("1")) && HealthPotions > 0)
+{
+	HealthPotionTolerance += 0.1;
+		
+	// High
+	MaxHealth += 100 / HealthPotionTolerance; // starts at 100 bonus max hp (double!)
+	Health = MaxHealth;
+	
+	// logic set up
+	HealthPotionTimerMax = 600 / HealthPotionTolerance; // starts at 600 ticks == 10 secs
+	HealthPotionTimer = HealthPotionTimerMax;
+	DoWithdrawalLogicHealthPotion++; // int instead of bool so that you can take multiple potions at once and get even worse withdrawal
+	HealthPotions--;
+}
+
+if (HealthPotionTimer > 0)
+{
+	HealthPotionTimer--;
+}
+else if (DoWithdrawalLogicHealthPotion)
+{ // Withdrawal
+	MaxHealth -= 100 / (HealthPotionTolerance * DoWithdrawalLogicHealthPotion); // put back to normal
+	MaxHealth -= 10 * HealthPotionTolerance; // put below normal
+	DoWithdrawalLogicHealthPotion--;
+}
 
 // directional input and movement
 if keyboard_check(ord("W"))
