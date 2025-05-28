@@ -87,7 +87,7 @@
   },
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bbd21b6a-fb7f-4537-936c-1a6f5e452421","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"ColourPallete",},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ad58e0f1-2fa8-4ba6-82cb-4cafe7217830","visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Player_Ref",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ad58e0f1-2fa8-4ba6-82cb-4cafe7217830","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Player_Ref",},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e6e09a4a-5bee-48f2-8d5f-8a494d795567","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Assets",},
   ],
   "nineSlice": null,
