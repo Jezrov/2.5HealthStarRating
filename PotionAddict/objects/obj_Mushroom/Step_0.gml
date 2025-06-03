@@ -26,3 +26,23 @@ if (obj_Player.x > bbox_left - SeenBoxSize && obj_Player.x < bbox_right + SeenBo
 		}
 	}
 
+
+if (place_meeting(x, y, obj_Sword))
+	{
+		if (!WasHit)
+		{
+			Health -= obj_Player.Damage;
+			WasHit = true; // prevents repeated damage
+
+			if (Health <= 0)
+			{
+				instance_destroy();
+				exit;
+			}
+		}
+	}
+	else
+{
+    WasHit = false; // Reset once sword is no longer overlapping
+}
+	

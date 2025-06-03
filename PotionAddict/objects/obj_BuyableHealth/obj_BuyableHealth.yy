@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_BuyablePotion1",
+  "name": "obj_BuyableHealth",
   "spriteId": {
-    "name": "spr_BuyablePotion1",
-    "path": "sprites/spr_BuyablePotion1/spr_BuyablePotion1.yy",
+    "name": "spr_BuyableHealth",
+    "path": "sprites/spr_BuyableHealth/spr_BuyableHealth.yy",
   },
   "solid": false,
   "visible": true,

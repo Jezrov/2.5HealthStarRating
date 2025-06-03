@@ -70,9 +70,6 @@ else if keyboard_check(ord("D"))
 	else x+= AirSpeed;
 }
 
-else CurrentDirection = Direction.Neutral;
-
-
 
 // gravity
 if (y < FloorHeight)
