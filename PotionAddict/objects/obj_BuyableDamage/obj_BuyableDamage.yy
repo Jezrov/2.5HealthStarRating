@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_BuyableDamage",
   "spriteId": {
-    "name": "spr_BuyableDamage",
-    "path": "sprites/spr_BuyableDamage/spr_BuyableDamage.yy",
+    "name": "spr_Damage_Podium",
+    "path": "sprites/spr_Damage_Podium/spr_Damage_Podium.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,6 +30,7 @@
   ],
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"ButtonPress","varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"Cost","varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
   ],
   "overriddenProperties": [],
   "parent": {

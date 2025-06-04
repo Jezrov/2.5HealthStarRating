@@ -1,4 +1,5 @@
 
+
 // DEBUG TESTING CONTROLS
 if keyboard_check(vk_up)
 	Health++;	
@@ -55,6 +56,7 @@ if keyboard_check(ord("W"))
 	
 else if keyboard_check(ord("A"))
 {
+	FacingLeft = true;
 	CurrentDirection = Direction.Left;
 	if (IsGrounded)	x -= GroundSpeed;
 	else x-= AirSpeed;

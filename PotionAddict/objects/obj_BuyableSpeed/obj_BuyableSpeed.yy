@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_BuyableSpeed",
   "spriteId": {
-    "name": "spr_BuyableSpeed",
-    "path": "sprites/spr_BuyableSpeed/spr_BuyableSpeed.yy",
+    "name": "spr_Speed_Podium",
+    "path": "sprites/spr_Speed_Podium/spr_Speed_Podium.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,6 +30,7 @@
   ],
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"ButtonPress","varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"Cost","varType":0,"value":"4","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
   ],
   "overriddenProperties": [],
   "parent": {

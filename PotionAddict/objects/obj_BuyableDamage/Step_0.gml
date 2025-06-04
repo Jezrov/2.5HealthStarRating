@@ -11,13 +11,13 @@ if (obj_Player.x > bbox_left && obj_Player.x < bbox_right &&
         instance_create_layer(x, y - 50, "Instances", obj_PressE); // draws UI 
     }
 	
-	if 	(obj_Player.Coins >= 5) // checks if Player has enough Coins
+	if 	(obj_Player.Coins >= Cost) // checks if Player has enough Coins Change number for cost
 	{
 		if keyboard_check(ord("E"))
 		{
 			if (ButtonPress == 0)
 			{
-				obj_Player.Coins -= 5;
+				obj_Player.Coins -= Cost; // change cost
 				obj_Player.DamagePotions += 1;
 				ButtonPress = 30; // stops spamming
 			}
