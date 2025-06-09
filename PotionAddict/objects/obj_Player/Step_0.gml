@@ -51,9 +51,12 @@ else if (DoWithdrawalLogicHealthPotion)
 }
 
 // directional input and movement
-if keyboard_check(ord("W"))
-	CurrentDirection = Direction.Up;
-	
+if keyboard_check(ord("D"))
+{
+	CurrentDirection = Direction.Right;
+	if (IsGrounded)	x += GroundSpeed;
+	else x+= AirSpeed;
+}
 else if keyboard_check(ord("A"))
 {
 	FacingLeft = true;
@@ -61,16 +64,12 @@ else if keyboard_check(ord("A"))
 	if (IsGrounded)	x -= GroundSpeed;
 	else x-= AirSpeed;
 } 
-
+else if keyboard_check(ord("W"))
+	CurrentDirection = Direction.Up;
 else if keyboard_check(ord("S"))
 	CurrentDirection = Direction.Down;
-	
-else if keyboard_check(ord("D"))
-{
-	CurrentDirection = Direction.Right;
-	if (IsGrounded)	x += GroundSpeed;
-	else x+= AirSpeed;
-}
+else
+	CurrentDirection = Direction.Neutral;	
 
 
 // gravity
@@ -94,7 +93,7 @@ else
 }
 
 // deciding to jump and initializing jump
-if (IsGrounded && keyboard_check(vk_space))
+if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 {
 	JumpSpeed = MaxJumpSpeed;
 	y -= JumpSpeed;
