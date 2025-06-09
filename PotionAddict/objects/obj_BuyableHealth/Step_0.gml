@@ -8,7 +8,7 @@ if (obj_Player.x > bbox_left && obj_Player.x < bbox_right &&
 	
 	if (!instance_exists(obj_PressE))
     {
-        instance_create_layer(x, y - 50, "Instances", obj_PressE); // draws UI 
+        instance_create_layer(x, y - 50, "UI", obj_PressE); // draws UI 
     }
 	
 	if 	(obj_Player.Coins >= Cost) // checks if Player has enough Coins change for cost
