@@ -1,4 +1,7 @@
-
+if (IsFacingRight)
+image_xscale = 2;
+else
+image_xscale = -2;
 
 // DEBUG TESTING CONTROLS
 if keyboard_check(vk_up)
@@ -51,25 +54,28 @@ else if (DoWithdrawalLogicHealthPotion)
 }
 
 // directional input and movement
-if keyboard_check(ord("D"))
+if  keyboard_check(ord("D")) && keyboard_check(ord("A")){}
+else if keyboard_check(ord("D"))
 {
-	CurrentDirection = Direction.Right;
+	IsFacingRight = true;
 	if (IsGrounded)	x += GroundSpeed;
 	else x+= AirSpeed;
 }
 else if keyboard_check(ord("A"))
-{
-	FacingLeft = true;
-	CurrentDirection = Direction.Left;
+{ 
+	IsFacingRight = false;
 	if (IsGrounded)	x -= GroundSpeed;
 	else x-= AirSpeed;
 } 
+
+if keyboard_check(ord("W")) && keyboard_check(ord("S"))
+	VerticalFacing = Direction.Neutral
 else if keyboard_check(ord("W"))
-	CurrentDirection = Direction.Up;
+	VerticalFacing = Direction.Up;
 else if keyboard_check(ord("S"))
-	CurrentDirection = Direction.Down;
+	VerticalFacing = Direction.Down;
 else
-	CurrentDirection = Direction.Neutral;	
+	VerticalFacing = Direction.Neutral;	
 
 
 // gravity
@@ -84,7 +90,7 @@ else
 
 
 // jumping and jump cancelling
-if (IsGrounded || CurrentDirection == Direction.Down)
+if (IsGrounded || VerticalFacing == Direction.Down)
 	JumpSpeed = 0;	
 else
 {
@@ -104,7 +110,7 @@ if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 // attack
 if (mouse_check_button_pressed(mb_left) && !(instance_exists(obj_Sword)))
 {
-	instance_create_layer(x, y, "Instances", obj_Sword, {CurrentDirection: CurrentDirection});
+	instance_create_layer(x, y, "Instances", obj_Sword, {VerticalFacing: VerticalFacing, IsFacingRight: IsFacingRight});
 	AttackTimer = 60/6;
 }
 

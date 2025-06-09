@@ -4,22 +4,30 @@ XOffset = obj_Player.sprite_width * 0.5;
 YOffset = obj_Player.sprite_height * -0.5;
 
 // take direction input
-if (CurrentDirection == Direction.Left)
-{
-	XOffset *= -1;
-	image_xscale = -1;
-}
-else if (CurrentDirection == Direction.Up)
+if (VerticalFacing == Direction.Up)
 {
 	XOffset = 0;
 	YOffset *= 2;
 	image_angle = 90;
 }
-else if (CurrentDirection == Direction.Down)
+else if (VerticalFacing == Direction.Down)
 {
 	XOffset = 0;
 	YOffset = 0;
 	image_angle = 270;
+}
+else if (VerticalFacing == Direction.Neutral)
+{
+	if (IsFacingRight)
+	{
+		// default is right
+	}	
+	else // Left
+	{
+		//XOffset *= -1; // was correct pre-adjusting player image direction logic
+		XOffset *= 1;
+		image_xscale = -1;
+	}
 }
 
 // location starts in correct position (needs to be in Create and Step or will glitch for first frame)
