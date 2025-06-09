@@ -115,7 +115,7 @@ if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 // attack
 if (mouse_check_button_pressed(mb_left) && !(instance_exists(obj_Sword)))
 {
-	instance_create_layer(x, y, "Instances", obj_Sword, {VerticalFacing: VerticalFacing, IsFacingRight: IsFacingRight});
+	instance_create_layer(x, y, "Player", obj_Sword, {VerticalFacing: VerticalFacing, IsFacingRight: IsFacingRight});
 	AttackTimer = 60/6;
 }
 
