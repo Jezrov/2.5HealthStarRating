@@ -3,6 +3,11 @@ image_xscale = 2;
 else
 image_xscale = -2;
 
+if keyboard_check(ord("O"))
+room_goto(Room1)
+if keyboard_check(ord("P"))
+room_goto(Shop)
+
 // DEBUG TESTING CONTROLS
 if keyboard_check(vk_up)
 	Health++;	
