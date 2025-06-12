@@ -60,4 +60,6 @@ else
 {
     WasHit = false; // Reset once sword is no longer overlapping
 }
+
+
 	
