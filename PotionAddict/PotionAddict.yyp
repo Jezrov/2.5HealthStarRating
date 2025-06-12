@@ -35,6 +35,7 @@
     {"id":{"name":"spr_potion5","path":"sprites/spr_potion5/spr_potion5.yy",},"order":11,},
     {"id":{"name":"Shop","path":"rooms/Shop/Shop.yy",},"order":1,},
     {"id":{"name":"obj_Mushroom","path":"objects/obj_Mushroom/obj_Mushroom.yy",},"order":0,},
+    {"id":{"name":"ts_assets","path":"tilesets/ts_assets/ts_assets.yy",},"order":1,},
     {"id":{"name":"obj_PlayerHealthBar","path":"objects/obj_PlayerHealthBar/obj_PlayerHealthBar.yy",},"order":0,},
     {"id":{"name":"spr_potion_podium2","path":"sprites/spr_potion_podium2/spr_potion_podium2.yy",},"order":1,},
     {"id":{"name":"obj_Sword","path":"objects/obj_Sword/obj_Sword.yy",},"order":1,},
