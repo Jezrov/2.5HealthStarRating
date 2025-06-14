@@ -2,7 +2,27 @@
 if (instance_exists(obj_Player))
 {
 	
+	// Movement
+	x = lerp(x, obj_Player.x, 0.01);
+	y = lerp(y, obj_Player.y, 0.01);
 	
+	if (x < obj_Player.x) // Chase player simple
+		{
+			image_xscale = -1;
+		}
+		if (x > obj_Player.x)
+		{
+			image_xscale = 1;
+		}
+	
+	
+	
+	SpawnTimer--;
+	if (SpawnTimer <= 0)
+	{
+		instance_create_layer(x, y, "Instances", obj_BoidProjectile)
+		SpawnTimer = SpawnTimerDuration;
+	}
 	
 	
 	
