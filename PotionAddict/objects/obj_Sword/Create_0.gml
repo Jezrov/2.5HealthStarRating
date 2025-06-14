@@ -16,7 +16,8 @@ else if (VerticalFacing == Direction.Down)
 	YOffset = 0;
 	image_angle = 270;
 }
-else if (VerticalFacing == Direction.Neutral)
+
+if (VerticalFacing == Direction.Neutral)
 {
 	if (IsFacingRight)
 	{
@@ -26,7 +27,15 @@ else if (VerticalFacing == Direction.Neutral)
 	{
 		//XOffset *= -1; // was correct pre-adjusting player image direction logic
 		XOffset *= 1;
-		image_xscale = -1;
+		image_xscale = -1;	
+		
+	}
+}
+else
+{
+	if (!IsFacingRight)
+	{
+		image_yscale = -1;	
 	}
 }
 
