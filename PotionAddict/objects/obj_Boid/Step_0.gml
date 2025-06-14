@@ -8,22 +8,27 @@ if (instance_exists(obj_Player))
 	
 	if (x < obj_Player.x) // Chase player simple
 		{
-			image_xscale = -1;
+			XDirectionFactor = -1;
 		}
 		if (x > obj_Player.x)
 		{
-			image_xscale = 1;
+			XDirectionFactor = 1;
 		}
-	
+	image_xscale = XDirectionFactor;
 	
 	
 	SpawnTimer--;
 	if (SpawnTimer <= 0)
 	{
-		instance_create_layer(x, y, "Instances", obj_BoidProjectile)
+		instance_create_layer(x + Radius * XDirectionFactor, y - Radius, "Instances", obj_BoidProjectile)
 		SpawnTimer = SpawnTimerDuration;
 	}
 	
+	
+	if (place_meeting(x, y, obj_Player))
+	{
+		obj_Player.Health -= Damage; // repeated damage as long as touching
+	}
 	
 	
 	// Apply knockback
