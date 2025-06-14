@@ -39,6 +39,8 @@ if (instance_exists(obj_Player))
 
 	if (place_meeting(x, y, obj_Sword))
 	{
+		DamageFlash = true;
+		
 		if (WasHit == false)
 		{
 			if (obj_Player.IsFacingRight)
