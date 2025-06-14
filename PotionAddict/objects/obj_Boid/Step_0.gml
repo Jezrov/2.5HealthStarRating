@@ -37,13 +37,24 @@ if (instance_exists(obj_Player))
 	{
 		if (WasHit == false)
 		{
-			if (obj_Player.IsFacingRight)
+			if (obj_Player.VerticalFacing == Direction.Neutral)
 			{
-				Knockback_X += KnockbackForce
+				if (obj_Player.IsFacingRight)
+				{
+					Knockback_X += KnockbackForce
+				}
+				else
+				{
+					Knockback_X -= KnockbackForce
+				}
 			}
-			else
+			else if (obj_Player.VerticalFacing == Direction.Down)
 			{
-				Knockback_X -= KnockbackForce
+				Knockback_Y  += KnockbackForce/2
+			}
+			else if (obj_Player.VerticalFacing == Direction.Up)
+			{
+				Knockback_Y  -= KnockbackForce/2
 			}
 		
 			Health -= obj_Player.Damage;
