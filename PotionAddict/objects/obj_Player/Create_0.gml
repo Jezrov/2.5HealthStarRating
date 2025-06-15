@@ -7,6 +7,7 @@ enum Direction
 
 
 
+
 Health = obj_PlayerManager.PlayerHealth;
 MaxHealth = obj_PlayerManager.PlayerMaxHealth;
 
@@ -26,3 +27,13 @@ DoWithdrawalLogicDamagePotion = obj_PlayerManager.DoWithdrawalLogicDamagePotion;
 SpeedPotions = obj_PlayerManager.SpeedPotions;
 
 Coins = obj_PlayerManager.Coins;
+
+
+
+
+HealthBar = instance_create_layer(x, y + 32, "UI", obj_EnemyHealthBar, 
+{
+	OwnerHealth : Health,
+	OwnerMaxHealth : MaxHealth
+}
+);

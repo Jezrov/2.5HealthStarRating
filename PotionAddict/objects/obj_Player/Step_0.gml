@@ -27,7 +27,8 @@ var yNextFrame = y;
 if (Health <= 0)
 {
 	Health = 0;
-	instance_destroy(self);
+	instance_destroy(HealthBar);
+	instance_destroy();
 	room_goto(Menu);
 }
 
@@ -110,6 +111,14 @@ if (Health < HealthLastFrame)
 	DamageFlash = true;	
 }
 HealthLastFrame = Health;
+	
+	
+	
+		
+HealthBar.x = x - 16;
+HealthBar.y = y - 74;
+HealthBar.OwnerHealth = Health;
+HealthBar.OwnerMaxHealth = MaxHealth;
 	
 	
 
