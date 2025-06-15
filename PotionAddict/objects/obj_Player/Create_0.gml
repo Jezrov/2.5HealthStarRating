@@ -8,8 +8,8 @@ enum Direction
 
 
 
-Health = obj_PlayerManager.PlayerHealth;
-MaxHealth = obj_PlayerManager.PlayerMaxHealth;
+Health = obj_PlayerManager.Health;
+MaxHealth = obj_PlayerManager.MaxHealth;
 
 HealthPotions = obj_PlayerManager.HealthPotions;
 HealthPotionTolerance = obj_PlayerManager.HealthPotionTolerance;
@@ -24,7 +24,12 @@ DamagePotionTimer = obj_PlayerManager.DamagePotionTimer;
 DamagePotionTimerMax = obj_PlayerManager.DamagePotionTimerMax;
 DoWithdrawalLogicDamagePotion = obj_PlayerManager.DoWithdrawalLogicDamagePotion;
 
+Speed = obj_PlayerManager.Speed;
 SpeedPotions = obj_PlayerManager.SpeedPotions;
+SpeedPotionTolerance = obj_PlayerManager.SpeedPotionTolerance;
+SpeedPotionTimer = obj_PlayerManager.SpeedPotionTimer;
+SpeedPotionTimerMax = obj_PlayerManager.SpeedPotionTimerMax;
+DoWithdrawalLogicSpeedPotion = obj_PlayerManager.DoWithdrawalLogicSpeedPotion;
 
 Coins = obj_PlayerManager.Coins;
 

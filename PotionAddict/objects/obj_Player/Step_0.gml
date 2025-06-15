@@ -125,8 +125,8 @@ HealthBar.OwnerMaxHealth = MaxHealth;
 
 // Persistent Data , make sure to store all variables
 
-obj_PlayerManager.PlayerHealth			   = Health;
-obj_PlayerManager.PlayerMaxHealth		  = MaxHealth;
+obj_PlayerManager.Health			   = Health;
+obj_PlayerManager.MaxHealth		  = MaxHealth;
 obj_PlayerManager.HealthPotions			 = HealthPotions;
 obj_PlayerManager.HealthPotionTolerance = HealthPotionTolerance;
 obj_PlayerManager.HealthPotionTimer = HealthPotionTimer;
@@ -140,6 +140,11 @@ obj_PlayerManager.DamagePotionTimer = DamagePotionTimer;
 obj_PlayerManager.DamagePotionTimerMax = DamagePotionTimerMax;
 obj_PlayerManager.DoWithdrawalLogicDamagePotion = DoWithdrawalLogicDamagePotion;
 
+obj_PlayerManager.Speed = Speed;
 obj_PlayerManager.SpeedPotions = SpeedPotions;
+obj_PlayerManager.SpeedPotionTolerance = SpeedPotionTolerance;
+obj_PlayerManager.SpeedPotionTimer = SpeedPotionTimer;
+obj_PlayerManager.SpeedPotionTimerMax = SpeedPotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicSpeedPotion = DoWithdrawalLogicSpeedPotion;
 
 obj_PlayerManager.Coins         = Coins;
