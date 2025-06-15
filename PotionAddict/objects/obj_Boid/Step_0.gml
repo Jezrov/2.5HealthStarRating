@@ -3,10 +3,12 @@ if (instance_exists(obj_Player))
 {
 	
 	// Movement
-	x = lerp(x, obj_Player.x, 0.01);
-	y = lerp(y, obj_Player.y, 0.01);
+	var xNextFrame = lerp(x, obj_Player.x, 0.01);
+	var yNextFrame = lerp(y, obj_Player.y, 0.01);
 	
-	if (x < obj_Player.x) // Chase player simple
+	
+	
+	if (x < obj_Player.x)
 		{
 			XDirectionFactor = -1;
 		}
@@ -32,8 +34,17 @@ if (instance_exists(obj_Player))
 	
 	
 	// Apply knockback
-	x += Knockback_X 
-	y += Knockback_Y 
+	xNextFrame += Knockback_X 
+	yNextFrame += Knockback_Y 
+
+	// collision check
+	if (!place_meeting(xNextFrame, yNextFrame, obj_Player))
+	&& (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
+	&& (!place_meeting(xNextFrame, yNextFrame, obj_Boid))
+	{
+		x = xNextFrame;
+		y = yNextFrame;
+	}
 
 	Knockback_X = lerp(Knockback_X, 0, KnockbackSpeed)
 	Knockback_Y = lerp(Knockback_Y, 0, KnockbackSpeed)

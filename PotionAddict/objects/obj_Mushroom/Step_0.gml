@@ -1,10 +1,23 @@
 if (instance_exists(obj_Player))
 {
 
+	if (x < obj_Player.x)
+		{
+			XDirectionFactor = -1;
+		}
+		if (x > obj_Player.x)
+		{
+			XDirectionFactor = 1;
+		}
+	image_xscale = XDirectionFactor;
+
+	var xNextFrame = x;
+	var yNextFrame = y;
+
 	// Gravity Applied
-	if (y < FloorHeight)
+	if (yNextFrame < FloorHeight)
 	{
-		y += FallSpeed;	
+		yNextFrame += FallSpeed;	
 		IsGrounded = false;
 	}
 	else
@@ -15,24 +28,34 @@ if (instance_exists(obj_Player))
 
 	SeenBoxSize = 500; // Bounding Box For AI
 
+	
 	// Checks if the player is inside its SeenBox and if true chase
 	if (obj_Player.x > bbox_left - SeenBoxSize && obj_Player.x < bbox_right + SeenBoxSize && 
 		obj_Player.y > bbox_top - SeenBoxSize && obj_Player.y < bbox_bottom + SeenBoxSize)
 		{
 			if (x < obj_Player.x) // Chase player simple
 			{
-				x += ChaseSpeed;
+				xNextFrame += ChaseSpeed;
 			}
 			if (x > obj_Player.x)
 			{
-				x -= ChaseSpeed;
+				xNextFrame -= ChaseSpeed;
 			}
 		}
 
 
 	// Apply knockback
-	x += Knockback_X 
-	y += Knockback_Y 
+	xNextFrame += Knockback_X 
+	yNextFrame += Knockback_Y 
+	
+	// collision check
+	if (!place_meeting(xNextFrame, yNextFrame, obj_Player))
+	&& (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
+	&& (!place_meeting(xNextFrame, yNextFrame, obj_Boid)) 
+	{
+		x = xNextFrame;
+		y = yNextFrame;
+	}
 
 	Knockback_X = lerp(Knockback_X, 0, KnockbackSpeed)
 	Knockback_Y = lerp(Knockback_Y, 0, KnockbackSpeed)

@@ -18,7 +18,8 @@ if keyboard_check(vk_right)
 if keyboard_check(vk_left)
 	MaxHealth--;	
 
-
+var xNextFrame = x;
+var yNextFrame = y;
 
 // clamp Health, Death
 if (MaxHealth <= 0) MaxHealth = 0;
@@ -63,14 +64,14 @@ if  keyboard_check(ord("D")) && keyboard_check(ord("A")){}
 else if keyboard_check(ord("D"))
 {
 	IsFacingRight = true;
-	if (IsGrounded)	x += GroundSpeed;
-	else x+= AirSpeed;
+	if (IsGrounded)	xNextFrame += GroundSpeed;
+	else xNextFrame+= AirSpeed;
 }
 else if keyboard_check(ord("A"))
 { 
 	IsFacingRight = false;
-	if (IsGrounded)	x -= GroundSpeed;
-	else x-= AirSpeed;
+	if (IsGrounded)	xNextFrame -= GroundSpeed;
+	else xNextFrame-= AirSpeed;
 } 
 
 if keyboard_check(ord("W")) && keyboard_check(ord("S"))
@@ -84,9 +85,9 @@ else
 
 
 // gravity
-if (y < FloorHeight)
+if (yNextFrame < FloorHeight)
 {
-	y += FallSpeed;	
+	yNextFrame += FallSpeed;	
 	IsGrounded = false;
 }
 else
@@ -99,7 +100,7 @@ if (IsGrounded || VerticalFacing == Direction.Down)
 	JumpSpeed = 0;	
 else
 {
-	y -= JumpSpeed;
+	yNextFrame -= JumpSpeed;
 	JumpSpeed -= JumpAcceleration;
 }
 
@@ -107,10 +108,15 @@ else
 if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 {
 	JumpSpeed = MaxJumpSpeed;
-	y -= JumpSpeed;
+	yNextFrame -= JumpSpeed;
 }
 
-
+// collision check - DONT DO COLLISION CHECK WITH ENEMIES OR GET STUCK
+	//if (!place_meeting(xNextFrame, yNextFrame, obj_Wall???))
+	//{
+		x = xNextFrame;
+		y = yNextFrame;
+	//}
 
 // attack
 if (mouse_check_button_pressed(mb_left) && !(instance_exists(obj_Sword)))
