@@ -5,6 +5,6 @@ CurrentHealthPotion = 2;
 CurrentDamagePotion = 1;
 CurrentSpeedPotion = 1;
 
-PlayerCoins = 0;
+PlayerCoins = 10;
 
 

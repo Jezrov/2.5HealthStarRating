@@ -124,6 +124,8 @@ AttackTimer--;
 if (AttackTimer <= 0 && instance_exists(obj_Sword))
 	instance_destroy(obj_Sword);
 	
+	
+
 // Persistent Data , make sure to store all variables
 
 obj_PlayerManager.PlayerHealth        = Health;

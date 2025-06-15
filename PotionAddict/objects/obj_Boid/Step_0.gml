@@ -68,6 +68,7 @@ if (instance_exists(obj_Player))
 			WasHit = true; // prevents repeated damage
 			if (Health <= 0)
 			{
+				obj_Player.Coins += 10;
 				instance_destroy();
 				exit;
 			}
