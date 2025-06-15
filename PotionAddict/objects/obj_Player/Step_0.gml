@@ -28,6 +28,7 @@ if (Health <= 0)
 {
 	Health = 0;
 	instance_destroy(self);
+	room_goto(Menu);
 }
 
 
