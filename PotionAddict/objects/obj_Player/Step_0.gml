@@ -9,14 +9,16 @@ if keyboard_check(ord("P"))
 room_goto(Shop)
 
 // DEBUG TESTING CONTROLS
+if keyboard_check(vk_enter)
+	HealthPotions = 100;
 if keyboard_check(vk_left)
-	DamagePotionTimer -= 10;
+	HealthPotionTimer -= 10;
 if keyboard_check(vk_right)
-	DamagePotionTimer += 10;
+	HealthPotionTimer += 10;
 if keyboard_check(vk_up)
-	DamagePotionTimer = DamagePotionTimerMax;
+	HealthPotionTimer = HealthPotionTimerMax;
 if keyboard_check(vk_down)
-	DamagePotionTimer = 0;
+	HealthPotionTimer = 0;
 
 var xNextFrame = x;
 var yNextFrame = y;
@@ -27,7 +29,6 @@ var yNextFrame = y;
 if (Health <= 0)
 {
 	Health = 0;
-	instance_destroy(HealthBar);
 	instance_destroy();
 	room_goto(Menu);
 }

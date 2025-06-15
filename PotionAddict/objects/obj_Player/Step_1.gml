@@ -24,6 +24,7 @@ else if (DoWithdrawalLogicHealthPotion)
 { // Withdrawal
 	MaxHealth -= 100 / (HealthPotionTolerance * DoWithdrawalLogicHealthPotion); // put back to normal
 	MaxHealth -= 10 * HealthPotionTolerance; // put below normal
+	Health = MaxHealth;
 	DoWithdrawalLogicHealthPotion--;
 }
 
