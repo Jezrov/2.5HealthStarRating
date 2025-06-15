@@ -19,7 +19,7 @@ if (instance_exists(obj_Player))
 	var HealthPotionsString = string_concat("[1] HP: ", obj_Player.HealthPotions);
 	draw_text_color(x - 20, y + sprite_height / 2 + 20 * 1, HealthPotionsString, 1, 1, 0, 1, 1);
 	
-	var StrengthPotionsString = string_concat("[2] DMG: ", obj_Player.DamagePotions);
+	var StrengthPotionsString = string_concat("[2] DMG: ", obj_Player.DamagePotions, " { ", obj_Player.Damage, " } { ", obj_Player.DamagePotionTimer, " }");
 	draw_text_color(x - 20, y + sprite_height / 2 + 20 * 3, StrengthPotionsString, 1, 1, 0, 1, 1);
 	
 	var SpeedPotionsString = string_concat("[3] SPD: ", obj_Player.SpeedPotions);

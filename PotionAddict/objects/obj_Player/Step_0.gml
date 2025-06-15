@@ -10,13 +10,13 @@ room_goto(Shop)
 
 // DEBUG TESTING CONTROLS
 if keyboard_check(vk_left)
-	HealthPotionTimer-=10;	
+	DamagePotionTimer -= 10;
 if keyboard_check(vk_right)
-	HealthPotionTimer+=10;	
+	DamagePotionTimer += 10;
 if keyboard_check(vk_up)
-	HealthPotionTimer = HealthPotionTimerMax;	
+	DamagePotionTimer = DamagePotionTimerMax;
 if keyboard_check(vk_down)
-	HealthPotionTimer = 0;
+	DamagePotionTimer = 0;
 
 var xNextFrame = x;
 var yNextFrame = y;
@@ -115,16 +115,21 @@ HealthLastFrame = Health;
 
 // Persistent Data , make sure to store all variables
 
-obj_PlayerManager.PlayerHealth        = Health;
-obj_PlayerManager.PlayerMaxHealth     = MaxHealth;
-
-obj_PlayerManager.CurrentHealthPotion = HealthPotions;
+obj_PlayerManager.PlayerHealth			   = Health;
+obj_PlayerManager.PlayerMaxHealth		  = MaxHealth;
+obj_PlayerManager.HealthPotions			 = HealthPotions;
 obj_PlayerManager.HealthPotionTolerance = HealthPotionTolerance;
 obj_PlayerManager.HealthPotionTimer = HealthPotionTimer;
 obj_PlayerManager.HealthPotionTimerMax = HealthPotionTimerMax;
 obj_PlayerManager.DoWithdrawalLogicHealthPotion = DoWithdrawalLogicHealthPotion;
 
-obj_PlayerManager.CurrentDamagePotion = DamagePotions;
-obj_PlayerManager.CurrentSpeedPotion  = SpeedPotions;
+obj_PlayerManager.Damage = Damage;
+obj_PlayerManager.DamagePotions = DamagePotions;
+obj_PlayerManager.DamagePotionTolerance = DamagePotionTolerance;
+obj_PlayerManager.DamagePotionTimer = DamagePotionTimer;
+obj_PlayerManager.DamagePotionTimerMax = DamagePotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicDamagePotion = DoWithdrawalLogicDamagePotion;
+
+obj_PlayerManager.SpeedPotions = SpeedPotions;
 
 obj_PlayerManager.PlayerCoins         = Coins;
