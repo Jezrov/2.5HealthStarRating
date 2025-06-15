@@ -5,4 +5,9 @@ Knockback_Y = 0
 KnockbackForce = 30
 KnockbackSpeed = 0.2
 
-instance_create_layer(x, y + 32, "UI", obj_EnemyHealthBar, { Owner : self });
+HealthBar = instance_create_layer(x, y + 32, "UI", obj_EnemyHealthBar, 
+{
+	OwnerHealth : Health,
+	OwnerMaxHealth : MaxHealth
+}
+);

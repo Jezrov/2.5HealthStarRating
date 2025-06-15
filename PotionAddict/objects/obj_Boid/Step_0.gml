@@ -79,6 +79,7 @@ if (instance_exists(obj_Player))
 			if (Health <= 0)
 			{
 				obj_Player.Coins += 10;
+				instance_destroy(HealthBar);
 				instance_destroy();
 				exit;
 			}
@@ -90,18 +91,13 @@ if (instance_exists(obj_Player))
 	}
 	
 	
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	HealthBar.x = x - 16;
+	HealthBar.y = y - 74;
+	HealthBar.OwnerHealth = Health;
+	HealthBar.OwnerMaxHealth = MaxHealth;
+
 	
 	
 }
