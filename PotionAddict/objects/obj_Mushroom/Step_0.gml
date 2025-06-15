@@ -51,6 +51,11 @@ if (place_meeting(x, y, obj_Sword))
 		WasHit = true; // prevents repeated damage
 		if (Health <= 0)
 		{
+			var  p = instance_nearest(x, y, obj_Player)
+			if (p != noone)
+			{
+				p.Coins += 5;
+			}
 			instance_destroy();
 			exit;
 		}

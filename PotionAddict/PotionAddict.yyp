@@ -36,7 +36,7 @@
     {"id":{"name":"obj_BuyableHealth","path":"objects/obj_BuyableHealth/obj_BuyableHealth.yy",},"order":0,},
     {"id":{"name":"obj_PlayerManager","path":"objects/obj_PlayerManager/obj_PlayerManager.yy",},"order":6,},
     {"id":{"name":"spr_potion5","path":"sprites/spr_potion5/spr_potion5.yy",},"order":11,},
-    {"id":{"name":"rm_Shop","path":"rooms/rm_Shop/rm_Shop.yy",},"order":1,},
+    {"id":{"name":"Shop","path":"rooms/Shop/Shop.yy",},"order":1,},
     {"id":{"name":"obj_Mushroom","path":"objects/obj_Mushroom/obj_Mushroom.yy",},"order":0,},
     {"id":{"name":"ts_assets","path":"tilesets/ts_assets/ts_assets.yy",},"order":1,},
     {"id":{"name":"obj_PlayerHealthBar","path":"objects/obj_PlayerHealthBar/obj_PlayerHealthBar.yy",},"order":0,},
@@ -77,8 +77,8 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"rm_Shop","path":"rooms/rm_Shop/rm_Shop.yy",},},
     {"roomId":{"name":"room_tile_test","path":"rooms/room_tile_test/room_tile_test.yy",},},
+    {"roomId":{"name":"Shop","path":"rooms/Shop/Shop.yy",},},
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy","order":12,},
@@ -100,12 +100,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mushrooms","folderPath":"folders/Sprites/Carlos_Things/Mushrooms.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Potions","folderPath":"folders/Sprites/Carlos_Things/Potions.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy","folderPath":"folders/Sprites/Enemy.yy","order":10,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Misc","folderPath":"folders/Sprites/Misc.yy","order":12,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shop","folderPath":"folders/Sprites/Shop.yy","order":8,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy","order":6,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Misc","folderPath":"folders/Sprites/Misc.yy","order":12,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

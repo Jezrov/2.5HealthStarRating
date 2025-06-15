@@ -41,7 +41,7 @@ if (keyboard_check_pressed(ord("1")) && HealthPotions > 0)
 	Health = MaxHealth;
 	
 	// logic set up
-	HealthPotionTimerMax = 600 / HealthPotionTolerance; // starts at 600 ticks == 10 secs
+	HealthPotionTimerMax = 1200 / HealthPotionTolerance; // starts at 600 ticks == 10 secs
 	HealthPotionTimer = HealthPotionTimerMax;
 	DoWithdrawalLogicHealthPotion++; // int instead of bool so that you can take multiple potions at once and get even worse withdrawal
 	HealthPotions--;
@@ -123,3 +123,12 @@ AttackTimer--;
 
 if (AttackTimer <= 0 && instance_exists(obj_Sword))
 	instance_destroy(obj_Sword);
+	
+// Persistent Data , make sure to store all variables
+
+obj_PlayerManager.PlayerHealth        = Health;
+obj_PlayerManager.PlayerMaxHealth     = MaxHealth;
+obj_PlayerManager.CurrentHealthPotion = HealthPotions;
+obj_PlayerManager.CurrentDamagePotion = DamagePotions;
+obj_PlayerManager.CurrentSpeedPotion  = SpeedPotions;
+obj_PlayerManager.PlayerCoins         = Coins;
