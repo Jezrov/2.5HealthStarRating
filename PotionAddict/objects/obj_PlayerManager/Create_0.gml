@@ -16,6 +16,6 @@ DoWithdrawalLogicDamagePotion = 0;
 
 SpeedPotions = 1;
 
-PlayerCoins = 10;
+Coins = 10;
 
 

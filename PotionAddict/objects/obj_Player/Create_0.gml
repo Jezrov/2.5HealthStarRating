@@ -25,4 +25,4 @@ DoWithdrawalLogicDamagePotion = obj_PlayerManager.DoWithdrawalLogicDamagePotion;
 
 SpeedPotions = obj_PlayerManager.SpeedPotions;
 
-Coins = obj_PlayerManager.PlayerCoins;
+Coins = obj_PlayerManager.Coins;
