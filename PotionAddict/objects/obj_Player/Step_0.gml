@@ -33,6 +33,14 @@ if (Health <= 0)
 	room_goto(Menu);
 }
 
+// Apply Speed Effects
+GroundSpeed *= Speed;
+AirSpeed *= Speed;
+MaxJumpSpeed *= Speed;
+JumpSpeed *= Speed;
+JumpAcceleration *= Speed;
+FallSpeed *= Speed;
+
 
 // directional input and movement
 if  keyboard_check(ord("D")) && keyboard_check(ord("A")){}
@@ -120,6 +128,17 @@ HealthBar.x = x - 16;
 HealthBar.y = y - 74;
 HealthBar.OwnerHealth = Health;
 HealthBar.OwnerMaxHealth = MaxHealth;
+	
+	
+	
+// Unapply Speed Effects after movement so they're once per frame
+GroundSpeed /= Speed;
+AirSpeed /= Speed;
+MaxJumpSpeed /= Speed;
+JumpSpeed /= Speed;
+JumpAcceleration /= Speed;
+FallSpeed /= Speed;
+	
 	
 	
 

@@ -49,6 +49,11 @@ else if (DoWithdrawalLogicHealthPotion)
 	DoWithdrawalLogicHealthPotion--;
 }
 
+if (MaxHealth <= 0) // minimum Speed
+{
+	//MaxHealth = 1;	// dont do this for OVERDOSE
+}
+
 
 
 
@@ -94,7 +99,7 @@ if ((SpeedPress || AllPress) && SpeedPotions > 0)
 	SpeedPotionTolerance += 0.1;
 		
 	// High
-	Speed += 10 /SpeedPotionTolerance; // starts at 100 bonus max hp (double!)
+	Speed += 1 /SpeedPotionTolerance; // starts at 100 bonus max hp (double!)
 	
 	// logic set up
 	SpeedPotionTimerMax = 1200 / SpeedPotionTolerance; // starts at 600 ticks == 10 secs
@@ -109,12 +114,12 @@ if (SpeedPotionTimer > 0)
 }
 else if (DoWithdrawalLogicSpeedPotion)
 { // Withdrawal
-	Speed -= 10 / (SpeedPotionTolerance * DoWithdrawalLogicSpeedPotion); // put back to normal
-	Speed -= 1 * SpeedPotionTolerance; // put below normal
+	Speed -= 1 / (SpeedPotionTolerance * DoWithdrawalLogicSpeedPotion); // put back to normal
+	Speed -= 0.1 * SpeedPotionTolerance; // put below normal
 	DoWithdrawalLogicSpeedPotion--;
 }
 
 if (Speed <= 0) // minimum Speed
 {
-	Speed = 0.1;	
+	Speed = 0.01;	
 }
