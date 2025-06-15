@@ -9,14 +9,14 @@ if keyboard_check(ord("P"))
 room_goto(Shop)
 
 // DEBUG TESTING CONTROLS
-if keyboard_check(vk_up)
-	Health++;	
-if keyboard_check(vk_down)
-	Health--;	
-if keyboard_check(vk_right)
-	MaxHealth++;	
 if keyboard_check(vk_left)
-	MaxHealth--;	
+	HealthPotionTimer-=10;	
+if keyboard_check(vk_right)
+	HealthPotionTimer+=10;	
+if keyboard_check(vk_up)
+	HealthPotionTimer = HealthPotionTimerMax;	
+if keyboard_check(vk_down)
+	HealthPotionTimer = 0;
 
 var xNextFrame = x;
 var yNextFrame = y;
@@ -145,7 +145,14 @@ HealthLastFrame = Health;
 
 obj_PlayerManager.PlayerHealth        = Health;
 obj_PlayerManager.PlayerMaxHealth     = MaxHealth;
+
 obj_PlayerManager.CurrentHealthPotion = HealthPotions;
+obj_PlayerManager.HealthPotionTolerance = HealthPotionTolerance;
+obj_PlayerManager.HealthPotionTimer = HealthPotionTimer;
+obj_PlayerManager.HealthPotionTimerMax = HealthPotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicHealthPotion = DoWithdrawalLogicHealthPotion;
+
 obj_PlayerManager.CurrentDamagePotion = DamagePotions;
 obj_PlayerManager.CurrentSpeedPotion  = SpeedPotions;
+
 obj_PlayerManager.PlayerCoins         = Coins;
