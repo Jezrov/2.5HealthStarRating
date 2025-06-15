@@ -38,8 +38,7 @@ if (instance_exists(obj_Player))
 	yNextFrame += Knockback_Y 
 
 	// collision check
-	if (!place_meeting(xNextFrame, yNextFrame, obj_Player))
-	&& (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
+	if (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
 	&& (!place_meeting(xNextFrame, yNextFrame, obj_Boid))
 	{
 		x = xNextFrame;

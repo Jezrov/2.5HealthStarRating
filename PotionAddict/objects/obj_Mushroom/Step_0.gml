@@ -49,8 +49,7 @@ if (instance_exists(obj_Player))
 	yNextFrame += Knockback_Y 
 	
 	// collision check
-	if (!place_meeting(xNextFrame, yNextFrame, obj_Player))
-	&& (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
+	if (!place_meeting(xNextFrame, yNextFrame, obj_Mushroom))
 	&& (!place_meeting(xNextFrame, yNextFrame, obj_Boid)) 
 	{
 		x = xNextFrame;
@@ -59,6 +58,11 @@ if (instance_exists(obj_Player))
 
 	Knockback_X = lerp(Knockback_X, 0, KnockbackSpeed)
 	Knockback_Y = lerp(Knockback_Y, 0, KnockbackSpeed)
+
+	if (place_meeting(x, y, obj_Player))
+	{
+		obj_Player.Health -= Damage; // repeated damage as long as touching
+	}
 
 	if (place_meeting(x, y, obj_Sword))
 	{
