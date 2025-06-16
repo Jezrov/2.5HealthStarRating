@@ -13,6 +13,7 @@
     {"id":{"name":"spr_potion_podium5","path":"sprites/spr_potion_podium5/spr_potion_podium5.yy",},"order":4,},
     {"id":{"name":"obj_ToWild","path":"objects/obj_ToWild/obj_ToWild.yy",},"order":8,},
     {"id":{"name":"spr_Health_Podium","path":"sprites/spr_Health_Podium/spr_Health_Podium.yy",},"order":3,},
+    {"id":{"name":"spr_Muishroom","path":"sprites/spr_Muishroom/spr_Muishroom.yy",},"order":4,},
     {"id":{"name":"spr_potion_test_variants","path":"sprites/spr_potion_test_variants/spr_potion_test_variants.yy",},"order":6,},
     {"id":{"name":"spr_potion3","path":"sprites/spr_potion3/spr_potion3.yy",},"order":9,},
     {"id":{"name":"spr_PressE","path":"sprites/spr_PressE/spr_PressE.yy",},"order":1,},
