@@ -84,6 +84,7 @@ if (instance_exists(obj_Player))
 			if (Health <= 0)
 			{
 				obj_Player.Coins += 5;
+				instance_destroy(HealthBar);
 				instance_destroy();
 				exit;
 			}
@@ -94,5 +95,10 @@ if (instance_exists(obj_Player))
 	    WasHit = false; // Reset once sword is no longer overlapping
 	}
 	
+	
+HealthBar.x = x - 16;
+HealthBar.y = y - 74;
+HealthBar.OwnerHealth = Health;
+HealthBar.OwnerMaxHealth = MaxHealth;
 	
 }

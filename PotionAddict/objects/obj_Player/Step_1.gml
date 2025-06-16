@@ -1,5 +1,26 @@
+HealthPress = false;
+DamagePress = false;
+SpeedPress = false;
+AllPress = false;
+
+if keyboard_check_pressed(ord("1"))
+HealthPress = true;
+
+if keyboard_check_pressed(ord("2"))
+DamagePress = true;
+
+if keyboard_check_pressed(ord("3"))
+SpeedPress = true;
+
+if mouse_check_button_pressed(mb_right)
+AllPress = true;
+
+
+
+
+
 // Use Health Potion
-if (keyboard_check_pressed(ord("1")) && HealthPotions > 0)
+if ((HealthPress || AllPress) && HealthPotions > 0)
 {
 	DamageFlashTimer = 0; // without this the Invincibility logic makes the potion not even increase health
 	
@@ -14,8 +35,6 @@ if (keyboard_check_pressed(ord("1")) && HealthPotions > 0)
 	HealthPotionTimer = HealthPotionTimerMax;
 	DoWithdrawalLogicHealthPotion++; // int instead of bool so that you can take multiple potions at once and get even worse withdrawal
 	HealthPotions--;
-	
-	show_debug_message("Health after potion: " + string(Health));
 }
 
 if (HealthPotionTimer > 0)
@@ -26,5 +45,81 @@ else if (DoWithdrawalLogicHealthPotion)
 { // Withdrawal
 	MaxHealth -= 100 / (HealthPotionTolerance * DoWithdrawalLogicHealthPotion); // put back to normal
 	MaxHealth -= 10 * HealthPotionTolerance; // put below normal
+	Health = MaxHealth;
 	DoWithdrawalLogicHealthPotion--;
+}
+
+if (MaxHealth <= 0) // minimum Speed
+{
+	//MaxHealth = 1;	// dont do this for OVERDOSE
+}
+
+
+
+
+
+// Use Damage Potion
+if ((DamagePress || AllPress) && DamagePotions > 0)
+{	
+	DamagePotionTolerance += 0.1;
+		
+	// High
+	Damage += 10 /DamagePotionTolerance; // starts at 100 bonus max hp (double!)
+	
+	// logic set up
+	DamagePotionTimerMax = 1200 / DamagePotionTolerance; // starts at 600 ticks == 10 secs
+	DamagePotionTimer = DamagePotionTimerMax;
+	DoWithdrawalLogicDamagePotion++; // int instead of bool so that you can take multiple potions at once and get even worse withdrawal
+	DamagePotions--;
+}
+
+if (DamagePotionTimer > 0)
+{
+	DamagePotionTimer--;
+}
+else if (DoWithdrawalLogicDamagePotion)
+{ // Withdrawal
+	Damage -= 10 / (DamagePotionTolerance * DoWithdrawalLogicDamagePotion); // put back to normal
+	Damage -= 1 * DamagePotionTolerance; // put below normal
+	DoWithdrawalLogicDamagePotion--;
+}
+
+if (Damage <= 0) // minimum damage
+{
+	Damage = 0.1;	
+}
+
+
+
+
+
+// Use Speed Potion
+if ((SpeedPress || AllPress) && SpeedPotions > 0)
+{	
+	SpeedPotionTolerance += 0.1;
+		
+	// High
+	Speed += 1 /SpeedPotionTolerance; // starts at 100 bonus max hp (double!)
+	
+	// logic set up
+	SpeedPotionTimerMax = 1200 / SpeedPotionTolerance; // starts at 600 ticks == 10 secs
+	SpeedPotionTimer = SpeedPotionTimerMax;
+	DoWithdrawalLogicSpeedPotion++; // int instead of bool so that you can take multiple potions at once and get even worse withdrawal
+	SpeedPotions--;
+}
+
+if (SpeedPotionTimer > 0)
+{
+	SpeedPotionTimer--;
+}
+else if (DoWithdrawalLogicSpeedPotion)
+{ // Withdrawal
+	Speed -= 1 / (SpeedPotionTolerance * DoWithdrawalLogicSpeedPotion); // put back to normal
+	Speed -= 0.1 * SpeedPotionTolerance; // put below normal
+	DoWithdrawalLogicSpeedPotion--;
+}
+
+if (Speed <= 0) // minimum Speed
+{
+	Speed = 0.01;	
 }

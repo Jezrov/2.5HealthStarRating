@@ -9,12 +9,14 @@ if keyboard_check(ord("P"))
 room_goto(Shop)
 
 // DEBUG TESTING CONTROLS
+if keyboard_check(vk_enter)
+	HealthPotions = 100;
 if keyboard_check(vk_left)
-	HealthPotionTimer-=10;	
+	HealthPotionTimer -= 10;
 if keyboard_check(vk_right)
-	HealthPotionTimer+=10;	
+	HealthPotionTimer += 10;
 if keyboard_check(vk_up)
-	HealthPotionTimer = HealthPotionTimerMax;	
+	HealthPotionTimer = HealthPotionTimerMax;
 if keyboard_check(vk_down)
 	HealthPotionTimer = 0;
 
@@ -27,9 +29,17 @@ var yNextFrame = y;
 if (Health <= 0)
 {
 	Health = 0;
-	instance_destroy(self);
+	instance_destroy();
 	room_goto(Menu);
 }
+
+// Apply Speed Effects
+GroundSpeed *= Speed;
+AirSpeed *= Speed;
+MaxJumpSpeed *= Speed;
+JumpSpeed *= Speed;
+JumpAcceleration *= Speed;
+FallSpeed *= Speed;
 
 
 // directional input and movement
@@ -112,19 +122,48 @@ if (Health < HealthLastFrame)
 HealthLastFrame = Health;
 	
 	
+	
+		
+HealthBar.x = x - 16;
+HealthBar.y = y - 74;
+HealthBar.OwnerHealth = Health;
+HealthBar.OwnerMaxHealth = MaxHealth;
+	
+	
+	
+// Unapply Speed Effects after movement so they're once per frame
+GroundSpeed /= Speed;
+AirSpeed /= Speed;
+MaxJumpSpeed /= Speed;
+JumpSpeed /= Speed;
+JumpAcceleration /= Speed;
+FallSpeed /= Speed;
+	
+	
+	
 
 // Persistent Data , make sure to store all variables
 
-obj_PlayerManager.PlayerHealth        = Health;
-obj_PlayerManager.PlayerMaxHealth     = MaxHealth;
-
-obj_PlayerManager.CurrentHealthPotion = HealthPotions;
+obj_PlayerManager.Health			   = Health;
+obj_PlayerManager.MaxHealth		  = MaxHealth;
+obj_PlayerManager.HealthPotions			 = HealthPotions;
 obj_PlayerManager.HealthPotionTolerance = HealthPotionTolerance;
 obj_PlayerManager.HealthPotionTimer = HealthPotionTimer;
 obj_PlayerManager.HealthPotionTimerMax = HealthPotionTimerMax;
 obj_PlayerManager.DoWithdrawalLogicHealthPotion = DoWithdrawalLogicHealthPotion;
 
-obj_PlayerManager.CurrentDamagePotion = DamagePotions;
-obj_PlayerManager.CurrentSpeedPotion  = SpeedPotions;
+obj_PlayerManager.Damage = Damage;
+obj_PlayerManager.DamagePotions = DamagePotions;
+obj_PlayerManager.DamagePotionTolerance = DamagePotionTolerance;
+obj_PlayerManager.DamagePotionTimer = DamagePotionTimer;
+obj_PlayerManager.DamagePotionTimerMax = DamagePotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicDamagePotion = DoWithdrawalLogicDamagePotion;
 
-obj_PlayerManager.PlayerCoins         = Coins;
+obj_PlayerManager.Speed = Speed;
+obj_PlayerManager.SpeedPotions = SpeedPotions;
+obj_PlayerManager.SpeedPotionTolerance = SpeedPotionTolerance;
+obj_PlayerManager.SpeedPotionTimer = SpeedPotionTimer;
+obj_PlayerManager.SpeedPotionTimerMax = SpeedPotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicSpeedPotion = DoWithdrawalLogicSpeedPotion;
+
+obj_PlayerManager.Coins         = Coins;
