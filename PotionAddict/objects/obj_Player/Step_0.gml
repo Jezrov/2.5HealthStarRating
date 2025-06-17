@@ -24,8 +24,8 @@ var xNextFrame = x;
 var yNextFrame = y;
 
 // clamp Health, Death
-//if (MaxHealth <= 0) MaxHealth = 0;
-//if (Health >= MaxHealth) Health = MaxHealth;
+if (MaxHealth <= 0) MaxHealth = 0;
+if (Health >= MaxHealth) Health = MaxHealth;
 if (Health <= 0)
 {
 	Health = 0;

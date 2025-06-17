@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_Boid",
   "spriteId": {
-    "name": "spr_Skill",
-    "path": "sprites/spr_Skill/spr_Skill.yy",
+    "name": "spr_Skull",
+    "path": "sprites/spr_Skull/spr_Skull.yy",
   },
   "solid": false,
   "visible": true,
