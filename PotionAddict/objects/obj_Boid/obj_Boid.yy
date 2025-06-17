@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_Boid",
-  "spriteId": {
-    "name": "spr_Skill",
-    "path": "sprites/spr_Skill/spr_Skill.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
