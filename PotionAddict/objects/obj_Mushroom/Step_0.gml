@@ -26,7 +26,7 @@ if (instance_exists(obj_Player))
 	}
 
 
-	SeenBoxSize = 500; // Bounding Box For AI
+	SeenBoxSize = 600; // Bounding Box For AI
 
 	
 	// Checks if the player is inside its SeenBox and if true chase
@@ -83,7 +83,7 @@ if (instance_exists(obj_Player))
 			WasHit = true; // prevents repeated damage
 			if (Health <= 0)
 			{
-				obj_Player.Coins += 5;
+				obj_Player.Coins += 2;
 				instance_destroy(HealthBar);
 				instance_destroy();
 				exit;

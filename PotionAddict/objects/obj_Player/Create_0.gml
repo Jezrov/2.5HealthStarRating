@@ -4,7 +4,10 @@ enum Direction
 	Neutral, Up, Down	
 };
 
-
+enum AnimationState
+{
+	Standing, Walking
+};
 
 
 

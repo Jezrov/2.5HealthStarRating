@@ -23,4 +23,4 @@ DoWithdrawalLogicSpeedPotion = 0;
 
 Coins = 0;
 
-
+NextRoom = Rooms.Room2;

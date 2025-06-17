@@ -1,5 +1,14 @@
-
 draw_self();
+
+if (AnimState == AnimationState.Standing)
+{
+	sprite_index = spr_PlayerIdle;
+}
+else if (AnimState == AnimationState.Walking)
+{
+	sprite_index = spr_PlayerWalking;
+}
+
 
 if (DamageFlashTimer <= 0)
 {

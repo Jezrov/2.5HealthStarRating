@@ -1,3 +1,5 @@
+AnimState = AnimationState.Standing;
+
 if (IsFacingRight)
 image_xscale = 2;
 else
@@ -34,12 +36,12 @@ if (Health <= 0)
 }
 
 // Apply Speed Effects
-GroundSpeed *= Speed;
-AirSpeed *= Speed;
-MaxJumpSpeed *= Speed;
-JumpSpeed *= Speed;
+GroundSpeed      *= Speed;
+AirSpeed         *= Speed;
+MaxJumpSpeed     *= Speed;
+JumpSpeed        *= Speed;
 JumpAcceleration *= Speed;
-FallSpeed *= Speed;
+FallSpeed        *= Speed;
 
 
 // directional input and movement
@@ -47,12 +49,14 @@ if  keyboard_check(ord("D")) && keyboard_check(ord("A")){}
 else if keyboard_check(ord("D"))
 {
 	IsFacingRight = true;
+	AnimState = AnimationState.Walking;
 	if (IsGrounded)	xNextFrame += GroundSpeed;
 	else xNextFrame+= AirSpeed;
 }
 else if keyboard_check(ord("A"))
 { 
 	IsFacingRight = false;
+	AnimState = AnimationState.Walking;
 	if (IsGrounded)	xNextFrame -= GroundSpeed;
 	else xNextFrame-= AirSpeed;
 } 
@@ -84,13 +88,13 @@ if (IsGrounded || VerticalFacing == Direction.Down)
 else
 {
 	yNextFrame -= JumpSpeed;
-	JumpSpeed -= JumpAcceleration;
+	JumpSpeed  -= JumpAcceleration;
 }
 
 // deciding to jump and initializing jump
 if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 {
-	JumpSpeed = MaxJumpSpeed;
+	JumpSpeed   = MaxJumpSpeed;
 	yNextFrame -= JumpSpeed;
 }
 
@@ -105,7 +109,8 @@ if (IsGrounded && keyboard_check(vk_space) && !keyboard_check(ord("S")))
 if (mouse_check_button_pressed(mb_left) && !(instance_exists(obj_Sword)))
 {
 	instance_create_layer(x, y, "Player", obj_Sword, {VerticalFacing: VerticalFacing, IsFacingRight: IsFacingRight});
-	AttackTimer = 60/6;
+	audio_play_sound(snd_Swing, 1, false, 1, 0.25, random_range(0.75, 1));
+	AttackTimer = 60/3;
 }
 
 AttackTimer--;
@@ -124,46 +129,46 @@ HealthLastFrame = Health;
 	
 	
 		
-HealthBar.x = x - 16;
-HealthBar.y = y - 74;
-HealthBar.OwnerHealth = Health;
+HealthBar.x              = x - 16;
+HealthBar.y              = y - 74;
+HealthBar.OwnerHealth    = Health;
 HealthBar.OwnerMaxHealth = MaxHealth;
 	
 	
 	
 // Unapply Speed Effects after movement so they're once per frame
-GroundSpeed /= Speed;
-AirSpeed /= Speed;
-MaxJumpSpeed /= Speed;
-JumpSpeed /= Speed;
+GroundSpeed      /= Speed;
+AirSpeed         /= Speed;
+MaxJumpSpeed     /= Speed;
+JumpSpeed        /= Speed;
 JumpAcceleration /= Speed;
-FallSpeed /= Speed;
+FallSpeed        /= Speed;
 	
 	
 	
 
 // Persistent Data , make sure to store all variables
 
-obj_PlayerManager.Health			   = Health;
-obj_PlayerManager.MaxHealth		  = MaxHealth;
-obj_PlayerManager.HealthPotions			 = HealthPotions;
-obj_PlayerManager.HealthPotionTolerance = HealthPotionTolerance;
-obj_PlayerManager.HealthPotionTimer = HealthPotionTimer;
-obj_PlayerManager.HealthPotionTimerMax = HealthPotionTimerMax;
+obj_PlayerManager.Health			            = Health;
+obj_PlayerManager.MaxHealth		                = MaxHealth;
+obj_PlayerManager.HealthPotions			        = HealthPotions;
+obj_PlayerManager.HealthPotionTolerance         = HealthPotionTolerance;
+obj_PlayerManager.HealthPotionTimer             = HealthPotionTimer;
+obj_PlayerManager.HealthPotionTimerMax          = HealthPotionTimerMax;
 obj_PlayerManager.DoWithdrawalLogicHealthPotion = DoWithdrawalLogicHealthPotion;
 
-obj_PlayerManager.Damage = Damage;
-obj_PlayerManager.DamagePotions = DamagePotions;
-obj_PlayerManager.DamagePotionTolerance = DamagePotionTolerance;
-obj_PlayerManager.DamagePotionTimer = DamagePotionTimer;
-obj_PlayerManager.DamagePotionTimerMax = DamagePotionTimerMax;
+obj_PlayerManager.Damage                        = Damage;
+obj_PlayerManager.DamagePotions                 = DamagePotions;
+obj_PlayerManager.DamagePotionTolerance         = DamagePotionTolerance;
+obj_PlayerManager.DamagePotionTimer             = DamagePotionTimer;
+obj_PlayerManager.DamagePotionTimerMax          = DamagePotionTimerMax;
 obj_PlayerManager.DoWithdrawalLogicDamagePotion = DoWithdrawalLogicDamagePotion;
 
-obj_PlayerManager.Speed = Speed;
-obj_PlayerManager.SpeedPotions = SpeedPotions;
-obj_PlayerManager.SpeedPotionTolerance = SpeedPotionTolerance;
-obj_PlayerManager.SpeedPotionTimer = SpeedPotionTimer;
-obj_PlayerManager.SpeedPotionTimerMax = SpeedPotionTimerMax;
-obj_PlayerManager.DoWithdrawalLogicSpeedPotion = DoWithdrawalLogicSpeedPotion;
+obj_PlayerManager.Speed                         = Speed;
+obj_PlayerManager.SpeedPotions                  = SpeedPotions;
+obj_PlayerManager.SpeedPotionTolerance          = SpeedPotionTolerance;
+obj_PlayerManager.SpeedPotionTimer              = SpeedPotionTimer;
+obj_PlayerManager.SpeedPotionTimerMax           = SpeedPotionTimerMax;
+obj_PlayerManager.DoWithdrawalLogicSpeedPotion  = DoWithdrawalLogicSpeedPotion;
 
-obj_PlayerManager.Coins         = Coins;
+obj_PlayerManager.Coins                         = Coins;
