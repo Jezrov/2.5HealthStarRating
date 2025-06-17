@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_Boid",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_Skull",
+    "path": "sprites/spr_Skull/spr_Skull.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
