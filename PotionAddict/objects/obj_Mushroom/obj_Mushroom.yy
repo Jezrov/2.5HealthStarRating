@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_Mushroom",
   "spriteId": {
-    "name": "Enemy",
-    "path": "sprites/Enemy/Enemy.yy",
+    "name": "spr_Muishroom",
+    "path": "sprites/spr_Muishroom/spr_Muishroom.yy",
   },
   "solid": false,
   "visible": true,
