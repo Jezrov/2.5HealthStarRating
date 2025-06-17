@@ -41,9 +41,9 @@ if (HealthPotionTimer > 0)
 {
 	HealthPotionTimer--;
 }
-else if (DoWithdrawalLogicHealthPotion)
+else if (DoWithdrawalLogicHealthPotion > 0)
 { // Withdrawal
-	MaxHealth -= 100 / (HealthPotionTolerance * DoWithdrawalLogicHealthPotion); // put back to normal
+	MaxHealth -= 100 / HealthPotionTolerance; // put back to normal
 	MaxHealth -= 10 * HealthPotionTolerance; // put below normal
 	Health = MaxHealth;
 	DoWithdrawalLogicHealthPotion--;
@@ -77,9 +77,9 @@ if (DamagePotionTimer > 0)
 {
 	DamagePotionTimer--;
 }
-else if (DoWithdrawalLogicDamagePotion)
+else if (DoWithdrawalLogicDamagePotion > 0)
 { // Withdrawal
-	Damage -= 10 / (DamagePotionTolerance * DoWithdrawalLogicDamagePotion); // put back to normal
+	Damage -= 10 / DamagePotionTolerance; // put back to normal
 	Damage -= 1 * DamagePotionTolerance; // put below normal
 	DoWithdrawalLogicDamagePotion--;
 }
